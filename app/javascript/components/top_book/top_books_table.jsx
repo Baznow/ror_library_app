@@ -15,8 +15,7 @@ export default class TopBooksTable extends React.Component {
             return;
         }
         $.getJSON(
-            '/v1/top_books.json',
-            { id: library_id },
+            `/v1/libraries/${library_id}/top_books.json`,
             (response) => {
                 this.setState({
                     books: response,
@@ -32,22 +31,24 @@ export default class TopBooksTable extends React.Component {
         });
         return (
             <main className={'d-flex flex-column flex-wrap'}>
-                <table className={'table table-hover'}>
-                    <thead className={'thead-light'}>
-                        <tr>
-                            <th>Наименование книги</th>
-                            <th>Автор</th>
-                            <th>Шифр</th>
-                            <th>Издательство</th>
-                            <th>Год издания</th>
-                            <th>Цена</th>
-                            <th>Дата поступления</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {books}
-                    </tbody>
-                </table>
+                <div className={'table-responsive'}>
+                    <table className={'table table-hover'}>
+                        <thead className={'thead-light'}>
+                            <tr>
+                                <th>Наименование книги</th>
+                                <th>Автор</th>
+                                <th>Шифр</th>
+                                <th>Издательство</th>
+                                <th>Год издания</th>
+                                <th>Цена</th>
+                                <th>Дата поступления</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {books}
+                        </tbody>
+                    </table>
+                </div>
             </main>
         )
     }

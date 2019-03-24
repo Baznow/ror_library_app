@@ -10,7 +10,7 @@ class V1::TopBooksController < ApplicationController
             limit 11) p
         left join books b
         on p.book_id = b.id
-        where b.library_id = ?', params[:id]])
+        where b.library_id = ?', params[:library_id]])
         render json: @top_books, status: :ok
     end
 end

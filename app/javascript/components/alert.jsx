@@ -13,7 +13,6 @@ export default class Alert extends React.Component {
                             &times;
                         </span>
                 </button>
-                <strong>{this.props.type + ' ! '}</strong>
                 {this.props.message}
             </div>
         )

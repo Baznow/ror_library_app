@@ -1,6 +1,6 @@
 class V1::EmployeesController < ApplicationController
     def index
-        @employees = Employee.where(library_id: params[:id])
+        @employees = Employee.where(library_id: params[:library_id]).order(:id)
         render json: @employees, status: :ok
     end
 

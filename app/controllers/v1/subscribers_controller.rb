@@ -1,6 +1,6 @@
 class V1::SubscribersController < ApplicationController
     def index
-        @subscribers = Subscriber.where(library_id: params[:id])
+        @subscribers = Subscriber.where(library_id: params[:library_id]).order(:id)
         render json: @subscribers, status: :ok
     end
 

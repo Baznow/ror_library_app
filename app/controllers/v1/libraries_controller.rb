@@ -1,6 +1,6 @@
 class V1::LibrariesController < ApplicationController
     def index
-        @libraries = Library.all
+        @libraries = Library.order(:id)
         render json: @libraries, status: :ok
     end
 

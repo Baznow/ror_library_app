@@ -48,14 +48,14 @@ class RootLayout extends React.Component {
 
         return (
             <div style={{height: '100vh', background: '#c0c0c0'}}>
-                <div className={'container d-flex flex-column w-50 h-100 shadow'} style={{background: '#ffffff'}}>
-                    <header className={'row pt-5 shadow'} style={{background: '#f3d060'}}>
-                        <div className={'col d-flex justify-content-between'}>
+                <div className={'mx-auto d-flex flex-column w-50 h-100 shadow'} style={{background: '#ffffff'}}>
+                    <header className={'px-3 pt-5 shadow'} style={{background: '#f3d060'}}>
+                        <div className={'d-flex justify-content-between'}>
                             <div className={'d-flex align-items-start'}>
                                 <Link to={'/'} className={'btn btn-outline-dark btn-lg'}>
                                     {'⚫'}
                                 </Link>
-                                <h1 style={{color: '#363732'}}>
+                                <h1>
                                     {"|" + header_title}
                                 </h1>
                             </div>
@@ -64,7 +64,7 @@ class RootLayout extends React.Component {
                             </div>
                         </div>
                     </header>
-                    <main className={'row d-flex flex-column flex-grow-1 p-3'}>
+                    <main className={'d-flex flex-column p-3'}>
                         {this.props.children}
                     </main>
                 </div>
